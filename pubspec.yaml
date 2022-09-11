@@ -1,6 +1,6 @@
 name: enhanced_button
 description: A wrapper of ElevatedButton to support gradient background and transform and image background.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/shirne/extended_button
 
 environment:

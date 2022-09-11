@@ -112,7 +112,6 @@ class EnhancedButton extends StatelessWidget {
 
   BoxDecoration _resolveDecoration(
     BuildContext context,
-    ButtonStyleButton button,
     Set<MaterialState> value,
   ) {
     final buttonStyle = _fallbackStyle(context);
@@ -145,7 +144,6 @@ class EnhancedButton extends StatelessWidget {
         );
       }
     }
-
     return BoxDecoration(
       color: extendedStyle.image == null
           ? buttonStyle.backgroundColor?.resolve(value)
@@ -174,7 +172,6 @@ class EnhancedButton extends StatelessWidget {
           clipBehavior: clipBehavior,
           decoration: _resolveDecoration(
             context,
-            child as ButtonStyleButton,
             value,
           ),
           child: child,

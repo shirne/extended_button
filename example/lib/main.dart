@@ -50,6 +50,15 @@ class ButtonDemoPage extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: ElevatedButton(
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom().copyWith(
+                      surfaceTintColor:
+                          MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.pressed)) {
+                          return Colors.transparent;
+                        }
+                        return Colors.green.withAlpha(100);
+                      }),
+                    ),
                     child: const Text('ElevatedButton'),
                   ),
                 ),
@@ -119,6 +128,48 @@ class ButtonDemoPage extends StatelessWidget {
                       ),
                     ),
                     child: const Text('EnhancedButton sweep'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: EnhancedButton(
+                    onPressed: () {},
+                    height: 68,
+                    enhancedStyle: EnhancedButtonStyle(
+                      gradient: MaterialStateProperty.all(const LinearGradient(
+                          colors: [Colors.blue, Colors.red])),
+                    ),
+                    child: const Text('EnhancedButton with height'),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Center(
+                  child: EnhancedButton(
+                    onPressed: () {},
+                    width: 100,
+                    height: 28,
+                    enhancedStyle: EnhancedButtonStyle(
+                      gradient: MaterialStateProperty.all(
+                        const SweepGradient(
+                          colors: [
+                            Colors.blue,
+                            Colors.green,
+                            Colors.cyan,
+                            Colors.red,
+                            Colors.blue,
+                          ],
+                        ),
+                      ),
+                    ),
+                    child: const Text('with size'),
                   ),
                 ),
               ),
@@ -225,14 +276,17 @@ class ButtonDemoPage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: Center(
                   child: EnhancedButton(
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: const StadiumBorder(),
+                      elevation: 2,
+                    ),
                     enhancedStyle: EnhancedButtonStyle(
                       image: MaterialStateProperty.all(
                         const DecorationImage(
+                          fit: BoxFit.fill,
                           image: AssetImage(
                             'assets/images/button.png',
                           ),
@@ -241,7 +295,7 @@ class ButtonDemoPage extends StatelessWidget {
                       enableShadow: true,
                       enableSplash: true,
                     ),
-                    child: const Text(''),
+                    child: const SizedBox(width: 95, height: 30),
                   ),
                 ),
               ),
