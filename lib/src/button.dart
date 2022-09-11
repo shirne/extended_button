@@ -14,8 +14,8 @@ class _NullButton extends ElevatedButton {
 
 /// A wrapper of [ElevatedButton] to support
 /// gradient background and transform and image background.
-class ExtendedButton extends StatelessWidget {
-  ExtendedButton({
+class EnhancedButton extends StatelessWidget {
+  EnhancedButton({
     Key? key,
     required this.onPressed,
     this.onLongPress,
@@ -26,7 +26,7 @@ class ExtendedButton extends StatelessWidget {
     this.autofocus = false,
     this.clipBehavior = Clip.none,
     MaterialStatesController? statesController,
-    ExtendedButtonStyle? extendedStyle,
+    EnhancedButtonStyle? enhancedStyle,
     this.width,
     this.height,
     required this.child,
@@ -34,7 +34,7 @@ class ExtendedButton extends StatelessWidget {
             MaterialStatesController({
               if (onPressed == null) MaterialState.disabled,
             }),
-        extendedStyle = extendedStyle ?? ExtendedButtonStyle(),
+        extendedStyle = enhancedStyle ?? EnhancedButtonStyle(),
         super(key: key);
 
   /// button width
@@ -75,7 +75,7 @@ class ExtendedButton extends StatelessWidget {
   final Widget? child;
 
   /// style for ExtendedButton
-  final ExtendedButtonStyle extendedStyle;
+  final EnhancedButtonStyle extendedStyle;
 
   /// Make an gradient from theme
   static MaterialStateProperty<Gradient> fromTheme(ThemeData theme) {

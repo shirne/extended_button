@@ -1,7 +1,7 @@
-ExtendedButton
+EnhancedButton
 ===================================
-<a href="https://pub.dev/packages/shirne_dialog">
-    <img src="https://img.shields.io/pub/v/shirne_dialog.svg" alt="pub package" />
+<a href="https://pub.dev/packages/enhanced_button">
+    <img src="https://img.shields.io/pub/v/enhanced_button.svg" alt="pub package" />
 </a>
 
 A wrapper of ElevatedButton to support gradient background and transform and image background.
@@ -16,20 +16,20 @@ A wrapper of ElevatedButton to support gradient background and transform and ima
 
 ## Preview
 
-|ExtendedButton| |
+|EnhancedButton| |
 |:-:|:-:|
-|![toast](preview/extended_button.gif)| |
+|![toast](preview/enhanced_button.gif)| |
 
 ## Getting started
 
-`flutter pub add extended_icon_button`
+`flutter pub add enhanced_button`
 
 ## Usage
 
 ```dart
-ExtendedButton(
+EnhancedButton(
     onPressed: () {},
-    extendedStyle: ExtendedButtonStyle(
+    extendedStyle: EnhancedButtonStyle(
         gradient: MaterialStateProperty.all(const LinearGradient(
             colors: [Colors.blue, Colors.red])),
     ),
@@ -41,6 +41,4 @@ More usage see `/example` folder.
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Extended style for [ExtendedButton]
-class ExtendedButtonStyle {
+class EnhancedButtonStyle {
   /// DecorationImage for button background
   final MaterialStateProperty<DecorationImage>? image;
 
@@ -26,7 +26,7 @@ class ExtendedButtonStyle {
   /// shadow was disabled when use image.
   final bool enableShadow;
 
-  ExtendedButtonStyle({
+  EnhancedButtonStyle({
     this.image,
     this.gradient,
     this.transform,
@@ -42,7 +42,7 @@ class ExtendedButtonStyle {
         enableSplash = enableSplash ?? image == null,
         enableShadow = enableShadow ?? image == null;
 
-  ExtendedButtonStyle copyWith({
+  EnhancedButtonStyle copyWith({
     MaterialStateProperty<DecorationImage>? image,
     MaterialStateProperty<Gradient>? gradient,
     MaterialStateProperty<Matrix4>? transform,
@@ -52,7 +52,7 @@ class ExtendedButtonStyle {
     bool? enableSplash,
     bool? enableShadow,
   }) {
-    return ExtendedButtonStyle(
+    return EnhancedButtonStyle(
       image: image ?? this.image,
       gradient: gradient ?? this.gradient,
       transform: transform ?? this.transform,

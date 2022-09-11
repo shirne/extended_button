@@ -1,4 +1,4 @@
-import 'package:extended_button/extended_button.dart';
+import 'package:enhanced_button/enhanced_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ExtendedButton Demo',
+      title: 'EnhancedButton Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.standard,
@@ -28,7 +28,7 @@ class ButtonDemoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ExtendedButton Demo'),
+        title: const Text('EnhancedButton Demo'),
       ),
       body: Column(
         children: [
@@ -38,9 +38,9 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: () {},
-                    child: const Text('ExtendedButton without style'),
+                    child: const Text('EnhancedButton without style'),
                   ),
                 ),
               ),
@@ -62,13 +62,13 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: null,
-                    extendedStyle: ExtendedButtonStyle(
+                    enhancedStyle: EnhancedButtonStyle(
                       gradient: MaterialStateProperty.all(const LinearGradient(
                           colors: [Colors.blue, Colors.red])),
                     ),
-                    child: const Text('ExtendedButton disabled'),
+                    child: const Text('EnhancedButton disabled'),
                   ),
                 ),
               ),
@@ -89,13 +89,13 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: () {},
-                    extendedStyle: ExtendedButtonStyle(
+                    enhancedStyle: EnhancedButtonStyle(
                       gradient: MaterialStateProperty.all(const LinearGradient(
                           colors: [Colors.blue, Colors.red])),
                     ),
-                    child: const Text('ExtendedButton linear'),
+                    child: const Text('EnhancedButton linear'),
                   ),
                 ),
               ),
@@ -103,9 +103,9 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: () {},
-                    extendedStyle: ExtendedButtonStyle(
+                    enhancedStyle: EnhancedButtonStyle(
                       gradient: MaterialStateProperty.all(
                         const SweepGradient(
                           colors: [
@@ -118,7 +118,7 @@ class ButtonDemoPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: const Text('ExtendedButton sweep'),
+                    child: const Text('EnhancedButton sweep'),
                   ),
                 ),
               ),
@@ -130,9 +130,9 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: () {},
-                    extendedStyle: ExtendedButtonStyle(
+                    enhancedStyle: EnhancedButtonStyle(
                       gradient: MaterialStateProperty.resolveWith(
                         (state) {
                           if (state.contains(MaterialState.pressed)) {
@@ -159,7 +159,7 @@ class ButtonDemoPage extends StatelessWidget {
                         const Duration(milliseconds: 1000),
                       ),
                     ),
-                    child: const Text('ExtendedButton switch gradient'),
+                    child: const Text('EnhancedButton switch gradient'),
                   ),
                 ),
               ),
@@ -167,9 +167,9 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: () {},
-                    extendedStyle: ExtendedButtonStyle(
+                    enhancedStyle: EnhancedButtonStyle(
                       gradient: MaterialStateProperty.all(
                         const LinearGradient(
                           colors: [
@@ -197,7 +197,7 @@ class ButtonDemoPage extends StatelessWidget {
                         return Curves.bounceOut;
                       }),
                     ),
-                    child: const Text('ExtendedButton scaled'),
+                    child: const Text('EnhancedButton scaled'),
                   ),
                 ),
               ),
@@ -209,9 +209,9 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: () {},
-                    extendedStyle: ExtendedButtonStyle(
+                    enhancedStyle: EnhancedButtonStyle(
                       image: MaterialStateProperty.all(
                         const DecorationImage(
                           image: AssetImage(
@@ -228,9 +228,9 @@ class ButtonDemoPage extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ExtendedButton(
+                  child: EnhancedButton(
                     onPressed: () {},
-                    extendedStyle: ExtendedButtonStyle(
+                    enhancedStyle: EnhancedButtonStyle(
                       image: MaterialStateProperty.all(
                         const DecorationImage(
                           image: AssetImage(
