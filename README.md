@@ -29,7 +29,7 @@ A wrapper of ElevatedButton to support gradient background and transform and ima
 ```dart
 EnhancedButton(
     onPressed: () {},
-    extendedStyle: EnhancedButtonStyle(
+    enhancedStyle: EnhancedButtonStyle(
         gradient: MaterialStateProperty.all(const LinearGradient(
             colors: [Colors.blue, Colors.red])),
     ),
