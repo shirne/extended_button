@@ -52,8 +52,8 @@ class ButtonDemoPage extends StatelessWidget {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom().copyWith(
                       surfaceTintColor:
-                          MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.pressed)) {
+                          WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.pressed)) {
                           return Colors.transparent;
                         }
                         return Colors.green.withAlpha(100);
@@ -74,7 +74,7 @@ class ButtonDemoPage extends StatelessWidget {
                   child: EnhancedButton(
                     onPressed: null,
                     enhancedStyle: EnhancedButtonStyle(
-                      gradient: MaterialStateProperty.all(const LinearGradient(
+                      gradient: WidgetStateProperty.all(const LinearGradient(
                           colors: [Colors.blue, Colors.red])),
                     ),
                     child: const Text('EnhancedButton disabled'),
@@ -101,7 +101,7 @@ class ButtonDemoPage extends StatelessWidget {
                   child: EnhancedButton(
                     onPressed: () {},
                     enhancedStyle: EnhancedButtonStyle(
-                      gradient: MaterialStateProperty.all(const LinearGradient(
+                      gradient: WidgetStateProperty.all(const LinearGradient(
                           colors: [Colors.blue, Colors.red])),
                     ),
                     child: const Text('EnhancedButton linear'),
@@ -115,7 +115,7 @@ class ButtonDemoPage extends StatelessWidget {
                   child: EnhancedButton(
                     onPressed: () {},
                     enhancedStyle: EnhancedButtonStyle(
-                      gradient: MaterialStateProperty.all(
+                      gradient: WidgetStateProperty.all(
                         const SweepGradient(
                           colors: [
                             Colors.blue,
@@ -143,7 +143,7 @@ class ButtonDemoPage extends StatelessWidget {
                     onPressed: () {},
                     height: 68,
                     enhancedStyle: EnhancedButtonStyle(
-                      gradient: MaterialStateProperty.all(const LinearGradient(
+                      gradient: WidgetStateProperty.all(const LinearGradient(
                           colors: [Colors.blue, Colors.red])),
                     ),
                     child: const Text('EnhancedButton with height'),
@@ -157,7 +157,7 @@ class ButtonDemoPage extends StatelessWidget {
                     width: 100,
                     height: 28,
                     enhancedStyle: EnhancedButtonStyle(
-                      gradient: MaterialStateProperty.all(
+                      gradient: WidgetStateProperty.all(
                         const SweepGradient(
                           colors: [
                             Colors.blue,
@@ -184,9 +184,9 @@ class ButtonDemoPage extends StatelessWidget {
                   child: EnhancedButton(
                     onPressed: () {},
                     enhancedStyle: EnhancedButtonStyle(
-                      gradient: MaterialStateProperty.resolveWith(
+                      gradient: WidgetStateProperty.resolveWith(
                         (state) {
-                          if (state.contains(MaterialState.pressed)) {
+                          if (state.contains(WidgetState.pressed)) {
                             return const LinearGradient(
                               colors: [
                                 Colors.red,
@@ -206,7 +206,7 @@ class ButtonDemoPage extends StatelessWidget {
                           );
                         },
                       ),
-                      duration: MaterialStateProperty.all(
+                      duration: WidgetStateProperty.all(
                         const Duration(milliseconds: 1000),
                       ),
                     ),
@@ -221,7 +221,7 @@ class ButtonDemoPage extends StatelessWidget {
                   child: EnhancedButton(
                     onPressed: () {},
                     enhancedStyle: EnhancedButtonStyle(
-                      gradient: MaterialStateProperty.all(
+                      gradient: WidgetStateProperty.all(
                         const LinearGradient(
                           colors: [
                             Colors.blue,
@@ -229,20 +229,20 @@ class ButtonDemoPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      transform: MaterialStateProperty.resolveWith((state) {
-                        if (state.contains(MaterialState.pressed)) {
+                      transform: WidgetStateProperty.resolveWith((state) {
+                        if (state.contains(WidgetState.pressed)) {
                           return Matrix4.identity()..scale(0.95);
                         }
                         return Matrix4.identity();
                       }),
-                      duration: MaterialStateProperty.resolveWith((state) {
-                        if (state.contains(MaterialState.pressed)) {
+                      duration: WidgetStateProperty.resolveWith((state) {
+                        if (state.contains(WidgetState.pressed)) {
                           return const Duration(milliseconds: 200);
                         }
                         return const Duration(milliseconds: 500);
                       }),
-                      curve: MaterialStateProperty.resolveWith((state) {
-                        if (state.contains(MaterialState.pressed)) {
+                      curve: WidgetStateProperty.resolveWith((state) {
+                        if (state.contains(WidgetState.pressed)) {
                           return Curves.easeOut;
                         }
                         return Curves.bounceOut;
@@ -263,7 +263,7 @@ class ButtonDemoPage extends StatelessWidget {
                   child: EnhancedButton(
                     onPressed: () {},
                     enhancedStyle: EnhancedButtonStyle(
-                      image: MaterialStateProperty.all(
+                      image: WidgetStateProperty.all(
                         const DecorationImage(
                           image: AssetImage(
                             'assets/images/button.png',
@@ -284,7 +284,7 @@ class ButtonDemoPage extends StatelessWidget {
                       elevation: 2,
                     ),
                     enhancedStyle: EnhancedButtonStyle(
-                      image: MaterialStateProperty.all(
+                      image: WidgetStateProperty.all(
                         const DecorationImage(
                           fit: BoxFit.fill,
                           image: AssetImage(

@@ -16,7 +16,7 @@ class _NullButton extends ElevatedButton {
 /// gradient background and transform and image background.
 class EnhancedButton extends StatelessWidget {
   EnhancedButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.onLongPress,
     this.onHover,
@@ -25,17 +25,16 @@ class EnhancedButton extends StatelessWidget {
     this.focusNode,
     this.autofocus = false,
     this.clipBehavior = Clip.none,
-    MaterialStatesController? statesController,
+    WidgetStatesController? statesController,
     EnhancedButtonStyle? enhancedStyle,
     this.width,
     this.height,
     required this.child,
   })  : statesController = statesController ??
-            MaterialStatesController({
-              if (onPressed == null) MaterialState.disabled,
+            WidgetStatesController({
+              if (onPressed == null) WidgetState.disabled,
             }),
-        extendedStyle = enhancedStyle ?? EnhancedButtonStyle(),
-        super(key: key);
+        extendedStyle = enhancedStyle ?? EnhancedButtonStyle();
 
   /// button width
   final double? width;
@@ -69,7 +68,7 @@ class EnhancedButton extends StatelessWidget {
   final bool autofocus;
 
   /// [ElevatedButton] statesController
-  final MaterialStatesController statesController;
+  final WidgetStatesController statesController;
 
   /// [ElevatedButton] child
   final Widget? child;
@@ -78,8 +77,8 @@ class EnhancedButton extends StatelessWidget {
   final EnhancedButtonStyle extendedStyle;
 
   /// Make an gradient from theme
-  static MaterialStateProperty<Gradient> fromTheme(ThemeData theme) {
-    return MaterialStateProperty.all(
+  static WidgetStateProperty<Gradient> fromTheme(ThemeData theme) {
+    return WidgetStateProperty.all(
       LinearGradient(
         colors: [
           theme.colorScheme.primary,
@@ -97,22 +96,22 @@ class EnhancedButton extends StatelessWidget {
 
   ButtonStyle _noBackgroundStyle(BuildContext context) {
     return _fallbackStyle(context).copyWith(
-      backgroundColor: MaterialStateProperty.all(
+      backgroundColor: WidgetStateProperty.all(
         _transparent,
       ),
-      shadowColor: MaterialStateProperty.all(
+      shadowColor: WidgetStateProperty.all(
         _transparent,
       ),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       overlayColor: extendedStyle.enableSplash
           ? null
-          : MaterialStateProperty.all(_transparent),
+          : WidgetStateProperty.all(_transparent),
     );
   }
 
   BoxDecoration _resolveDecoration(
     BuildContext context,
-    Set<MaterialState> value,
+    Set<WidgetState> value,
   ) {
     final buttonStyle = _fallbackStyle(context);
     final border = buttonStyle.shape?.resolve(value);
@@ -159,7 +158,7 @@ class EnhancedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<Set<MaterialState>>(
+    return ValueListenableBuilder<Set<WidgetState>>(
       valueListenable: statesController,
       builder: (context, value, child) {
         return AnimatedContainer(

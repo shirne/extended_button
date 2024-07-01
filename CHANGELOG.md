@@ -1,3 +1,6 @@
+## 0.1.0
+* Migrate to Flutter 3.22
+
 ## 0.0.3
 * add screenshots
 

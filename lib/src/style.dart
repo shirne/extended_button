@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 /// Extended style for [ExtendedButton]
 class EnhancedButtonStyle {
   /// DecorationImage for button background
-  final MaterialStateProperty<DecorationImage>? image;
+  final WidgetStateProperty<DecorationImage>? image;
 
   /// Gradient for button background
-  final MaterialStateProperty<Gradient>? gradient;
+  final WidgetStateProperty<Gradient>? gradient;
 
   /// Matrix4 trandsform for button
-  final MaterialStateProperty<Matrix4>? transform;
-  final MaterialStateProperty<BlendMode>? blendMode;
+  final WidgetStateProperty<Matrix4>? transform;
+  final WidgetStateProperty<BlendMode>? blendMode;
 
   /// gradient and transform animation duration
-  final MaterialStateProperty<Duration> duration;
+  final WidgetStateProperty<Duration> duration;
 
   /// gradient and transform animation curve
-  final MaterialStateProperty<Curve>? curve;
+  final WidgetStateProperty<Curve>? curve;
 
   /// force enable splash.
   /// splash was disabled when use image.
@@ -31,24 +31,22 @@ class EnhancedButtonStyle {
     this.gradient,
     this.transform,
     this.blendMode,
-    MaterialStateProperty<Duration>? duration,
+    WidgetStateProperty<Duration>? duration,
     this.curve,
     bool? enableSplash,
     bool? enableShadow,
   })  : duration = duration ??
-            MaterialStateProperty.all(
-              const Duration(milliseconds: 200),
-            ),
+            WidgetStateProperty.all(const Duration(milliseconds: 200)),
         enableSplash = enableSplash ?? image == null,
         enableShadow = enableShadow ?? image == null;
 
   EnhancedButtonStyle copyWith({
-    MaterialStateProperty<DecorationImage>? image,
-    MaterialStateProperty<Gradient>? gradient,
-    MaterialStateProperty<Matrix4>? transform,
-    MaterialStateProperty<BlendMode>? blendMode,
-    MaterialStateProperty<Duration>? duration,
-    MaterialStateProperty<Curve>? curve,
+    WidgetStateProperty<DecorationImage>? image,
+    WidgetStateProperty<Gradient>? gradient,
+    WidgetStateProperty<Matrix4>? transform,
+    WidgetStateProperty<BlendMode>? blendMode,
+    WidgetStateProperty<Duration>? duration,
+    WidgetStateProperty<Curve>? curve,
     bool? enableSplash,
     bool? enableShadow,
   }) {
